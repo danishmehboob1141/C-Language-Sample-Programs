@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct distance
+{
+	int feet;
+	float inch;
+};
+void Add(struct distance d1, struct distance d2, struct distance *d3);
+main()
+{
+	struct distance dist1, dist2, dist3;
+	printf("First distance \n");
+	printf("Enter feet  ");
+	scanf("%d",&dist1.feet);
+	printf("Enter inches  ");
+	scanf("%f",&dist1.inch);
+	printf("Second distance \n");
+	printf("Enter feet  ");
+	scanf("%d",&dist2.feet);
+	printf("Enter inches  ");
+	scanf("%f",&dist2.inch);
+	Add(dist1, dist2, &dist3);
+	printf("\n Sum of distances = %d\'-%.1f\" ",dist3.feet, dist3.inch);
+	
+	
+	getch();
+}
+
+void Add(struct distance d1, struct distance d2, struct distance *d3)
+{
+	(*d3).feet=(d1).feet+(d2).feet;
+	(*d3).inch=(d1).inch+(d2).inch;
+	while((*d3).inch>=12)
+	{
+		(*d3).inch-=12;
+		++(*d3).feet;
+	}
+	
+}

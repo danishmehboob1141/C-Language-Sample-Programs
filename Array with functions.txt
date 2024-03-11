@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<conio.h>
+
+void storeArray(int[]);
+void printArray(int[]);
+void bubblesort(int[]);
+
+void storeArray(int x[])
+{
+	printf("Enter 3 values");
+	for (int i = 0; i < 3; i++)
+	{
+		scanf_s("%d", &x[i]);
+	}
+}
+
+void printArray(int y[])
+{
+	printf("values are:\n");
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d\n", y[i]);
+	}
+}
+
+void bubblesort(int z[])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3 - 1; j++)
+		{
+			if (z[j] > z[j + 1])
+			{
+				int  temp = z[j];
+				z[j] = z[j + 1];
+				z[j + 1] = temp;
+			}
+		}
+	}
+}
+
+void main()
+{
+	int arr[3];
+	int arr1[3] = {9,3,6};
+	storeArray(arr);
+	printArray(arr);
+	printArray(arr1);
+	bubblesort(arr);
+	bubblesort(arr1);
+	printArray(arr);
+	printArray(arr1);
+	_getch();
+}

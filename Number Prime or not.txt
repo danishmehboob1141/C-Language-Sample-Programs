@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int p;
+	printf("Find no is prime or not");
+	scanf("%d",&p);
+	int num=2;
+	while(num<=p-1)
+	{
+		if(p%num==0)
+		{
+			printf("%d is not a prime no",p);
+			break;
+		}
+		num++;
+	}
+	if(num==p)
+	{
+		printf("%d is a prime no",p);
+	}
+	getch();
+}
+########################################################################################################
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int num;
+	printf("Enter num    ");
+	scanf_s("%d", &num);
+	int count = 0;
+
+	for (int i = 1; i <= num / 2; i++)
+	{
+		if (num%i == 0)
+		{
+			count++;
+		}
+	}
+	if (count > 1)
+	{
+		printf(" %d is Not a Prime",num);
+	}
+	else
+	{
+		printf(" %d is a Prime number",num);
+	}
+
+	_getch();
+}

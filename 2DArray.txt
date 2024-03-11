@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<conio.h>
+
+void sum(int[3][2]);
+
+void sum(int x[3][2])
+{
+	int sum = 0;
+	for (int r = 0; r < 3; r++)
+	{
+		for (int c = 0; c < 2; c++)
+		{
+			sum = sum + x[r][c];
+		}
+		
+	}
+	printf("%d",sum);
+
+}
+void main()
+{
+	int arr[2][3] = { {3,8,9},{1,4,7} };
+	int arr1[3][2];
+	printf("Enter array values\n");
+	for (int r=0; r<3; r++)
+	{
+		printf("Enter %d row values\n",r+1);
+		for (int c=0; c<2; c++)
+		{
+			scanf_s("%d",&arr1[r][c]);
+		}
+	}
+	printf("values are:\n");
+	for (int r = 0; r < 3; r++)
+	{
+		printf(" %d row values are:\n", r + 1);
+		for (int c = 0; c < 2; c++)
+		{
+			printf("%d\t",arr1[r][c]);
+		}
+		printf("\n");
+	}
+	sum(arr1);
+	_getch();
+}
